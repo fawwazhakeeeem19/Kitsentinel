@@ -1,0 +1,44 @@
+
+targets:
+
+
+
+database_path: ~/.kitsentinel/sentinel.db
+
+
+output_dir: ~/.kitsentinel/reports
+
+
+timeout_seconds: 30
+worker_count: 20
+max_retries: 3
+user_agent: "KitSentinel/1.0 Security Scanner"
+follow_redirects: true
+max_redirects: 10
+
+
+log_level: info   # debug | info | warn | error
+
+
+python_bin: python3
+
+
+notify_email: ""
+slack_webhook: ""
+
+
+cert_expiry_warn_days:
+  - 90
+  - 60
+  - 30
+  - 14
+  - 7
+  - 3
+  - 1
+
+
+risk_weights:
+  exposure: 0.40
+  findings: 0.35
+  configuration: 0.15
+  recency: 0.10
