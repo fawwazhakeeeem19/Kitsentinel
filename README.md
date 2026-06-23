@@ -1,4 +1,4 @@
-# ▓▓ KitSentinel
+
 
 **Security Posture Management Platform** — CLI & TUI
 
@@ -16,37 +16,37 @@ Menggabungkan Golang Core Engine dengan Python Intelligence Engine untuk memberi
 
 ---
 
-## Installation
 
-### Prerequisites
+
+
 
 ```bash
-# Go 1.22+
+
 go version
 
-# GCC (required for CGO/SQLite)
+
 sudo apt install gcc   # Ubuntu/Debian
 brew install gcc       # macOS
 
-# Python 3.10+ (for Intelligence Engine)
+
 python3 --version
 ```
 
-### Build from source
+
 
 ```bash
 git clone https://github.com/kitsentinel/cli
 cd kitsentinel-cli
 
-# Install dependencies and build
+
 make deps
 make build
 
-# Install to /usr/local/bin
+
 make install
 ```
 
-### Manual build
+
 
 ```bash
 CGO_ENABLED=1 go build -o kitsentinel ./cmd/kitsentinel/main.go
@@ -55,25 +55,25 @@ sudo mv kitsentinel /usr/local/bin/
 
 ---
 
-## Quick Start
+
 
 ```bash
-# 1. Initialize configuration
+
 kitsentinel init
 
-# 2. Scan your first target
+
 kitsentinel inventory --target example.com
 
-# 3. Launch interactive TUI
+
 kitsentinel tui
 
-# 4. View security status
+
 kitsentinel status
 ```
 
 ---
 
-## Commands
+
 
 | Command | Description |
 |---------|-------------|
@@ -88,7 +88,7 @@ kitsentinel status
 | `kitsentinel status` | Quick security posture overview |
 | `kitsentinel tui` | Launch interactive TUI |
 
-### Flags
+
 
 ```bash
 kitsentinel inventory --target "example.com,api.example.com"
@@ -101,7 +101,7 @@ kitsentinel --quiet status               # suppress banner
 
 ---
 
-## TUI Navigation
+
 
 ```
 ╔═══════════════════════════════════════════════════════════════════╗
@@ -138,22 +138,22 @@ kitsentinel --quiet status               # suppress banner
 
 ---
 
-## Python Intelligence Engine
+
 
 ```bash
-# Risk scoring
+
 python3 python/risk_engine/risk_engine.py ~/.kitsentinel/sentinel.db --format text
 
-# Trend analytics
+
 python3 python/analytics/trend_analytics.py ~/.kitsentinel/sentinel.db --days 30 --format text
 
-# Recommendation engine
+
 python3 python/recommendation/recommendation_engine.py ~/.kitsentinel/sentinel.db --format text
 ```
 
 ---
 
-## Configuration
+
 
 Config file: `~/.kitsentinel/config.yaml`
 
@@ -177,7 +177,7 @@ Environment variable overrides: `KITSENTINEL_<KEY>` (e.g. `KITSENTINEL_DATABASE_
 
 ---
 
-## Project Structure
+
 
 ```
 kitsentinel-cli/
@@ -206,16 +206,16 @@ kitsentinel-cli/
 
 ---
 
-## What KitSentinel Detects
 
-### Security Headers
+
+
 - Missing HSTS
 - Missing Content-Security-Policy
 - Missing X-Frame-Options
 - Missing X-Content-Type-Options
 - Missing Referrer-Policy
 
-### TLS/SSL
+
 - TLS 1.0 / TLS 1.1 (deprecated)
 - Weak cipher suites
 - Certificate expiry (90/30/14/7/3/1 day warnings)
@@ -223,13 +223,13 @@ kitsentinel-cli/
 - Weak RSA key size (<2048 bit)
 - Invalid certificate chain
 
-### DNS & Email Security
+
 - Missing SPF record
 - Missing DMARC record / weak policy (p=none)
 - Missing DKIM
 - Missing MTA-STS
 
-### Exposures (25+ checks)
+
 - Admin panels (wp-admin, /admin, phpMyAdmin, Adminer)
 - Debug pages (Laravel Telescope, Debugbar, Spring Actuator)
 - Config files (.env, .git/HEAD, config.php)
@@ -238,7 +238,7 @@ kitsentinel-cli/
 
 ---
 
-## License
+
 
 MIT License — see LICENSE file.
 
